@@ -1,0 +1,79 @@
+{
+  "id": "1500010",
+  "name": "硅谷外卖",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "502094",
+      "name": "向右剪头",
+      "font_class": "youjiantou",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "1380045",
+      "name": "外卖",
+      "font_class": "icon-test",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "2214412",
+      "name": "剪头",
+      "font_class": "jiantou1",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "3642412",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "6274489",
+      "name": "我 的",
+      "font_class": "wodedangxuan",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7488862",
+      "name": "搜索--1",
+      "font_class": "soushuo",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "8805453",
+      "name": "个人中心 我的  人物 标准头  面性 ",
+      "font_class": "gerenzhongxinwoderenwubiaozhuntoumianxing",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "9901677",
+      "name": "订单",
+      "font_class": "order",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "10164065",
+      "name": "我 的",
+      "font_class": "wode",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11372639",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e8ab",
+      "unicode_decimal": 59563
+    }
+  ]
+}
