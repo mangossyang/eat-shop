@@ -4,16 +4,16 @@
         <div class="login_header">
           <h2 class="login_logo">柚子外卖</h2>
           <div class="login_header_title">
-            <a href="javascript:;" class="on">短信登录</a>
-            <a href="javascript:;">密码登录</a>
+            <a href="javascript:;" :class="{on: onClass}" @click="onClass=true">短信登录</a>
+            <a href="javascript:;" :class="{on: !onClass}" @click="onClass=false">密码登录</a>
           </div>
         </div>
         <div class="login_content">
           <form>
-            <div class="on">
+            <div :class="{on: onClass}">
               <section class="login_message">
-                <input type="tel" maxlength="11" placeholder="手机号">
-                <button disabled="disabled" class="get_verification">获取验证码</button>
+                <input type="tel" maxlength="11" placeholder="手机号" v-model="phone">
+                <button :disabled="!changeColor" class="get_verification" :class="{change_color: changeColor}" @click.prevent="getCode">{{computeTime>0 ? `已发送${computeTime}s` : '获取验证码'}}</button>
               </section>
               <section class="login_verification">
                 <input type="tel" maxlength="8" placeholder="验证码">
@@ -23,7 +23,7 @@
                 <a href="javascript:;">《用户服务协议》</a>
               </section>
             </div>
-            <div>
+            <div :class="{on: !onClass}">
               <section>
                 <section class="login_message">
                   <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名">
@@ -53,7 +53,36 @@
 </template>
 
 <script>
+import { setInterval, clearInterval } from 'timers'
 export default {
+  data() {
+    return {
+      onClass: true,
+      phone: '', //手机号
+      computeTime: 0 //验证码倒计时
+    }
+  },
+  methods: {
+    getCode () {
+      // 启动倒计时
+      if(!this.computeTime) {
+        this.computeTime = 60
+        const timer = setInterval(() => {
+           this.computeTime--
+           if(this.computeTime == 0) {
+             clearInterval(timer)
+           }
+         },1000)
+      }
+
+      // 发送ajax请求(向指定手机号发送验证码短信)
+    }
+  },
+  computed: {
+    changeColor() {
+      return /^1\d{10}$/.test(this.phone)
+    }
+  }
 }
 </script>
 
@@ -118,6 +147,8 @@ export default {
                   color #ccc
                   font-size 14px
                   background transparent
+                  &.change_color
+                    color black
               .login_verification
                 position relative
                 margin-top 16px
